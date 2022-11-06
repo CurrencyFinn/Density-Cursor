@@ -1,6 +1,9 @@
 # Density-Cursor
 JS program that makes colours appear on mouse movement.
 
+Highscore can be visualized in the meta tag (refreshing the page after refreshing will show the highscore).
+Live score can be viewed on the title.
+
 <h3>///////////////// Recommended settings ///////////////////////</h3>
 
 sides >= 30
