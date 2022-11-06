@@ -1,7 +1,7 @@
 # Density-Cursor
 JS program that makes colours appear on mouse movement.
 
-///////////////// Recommended settings ///////////////////////
+<h1>///////////////// Recommended settings ///////////////////////</h1>
 
 sides >= 30
 brushSize != 1 && brushSize (0 || 2)
