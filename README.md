@@ -9,7 +9,7 @@ brushSize != 1 && brushSize (0 || 2)
 
 Rest of settings is something that can be played with.
 
-<h3>///////////////// For the Future ////////////////////////////////</h3>
+<h3>///////////////// For the Future /////////////////////////////////</h3>
 
 Program is not fully optimized on CPU usage, it has been created for creativity and learning purposes.
 
