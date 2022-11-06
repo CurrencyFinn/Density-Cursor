@@ -16,7 +16,16 @@ var timeoutDelay = 3000;
 var intensity = 50;
 var decayRate = 5;
 var addition = 5;
+var pointReceiveRatio= 0.5;
 
+//localStorage.setItem("point", 5);
+if (localStorage.getItem("point") == null) {
+    var points = localStorage.setItem("point", 0);
+    document.querySelector('meta[name="HighScore"]').setAttribute("content", points);
+} else {
+    var points = localStorage.getItem("point")
+    document.querySelector('meta[name="HighScore"]').setAttribute("content", points);
+}
 // fundemental function(s)
 
 const range = (start, end) => {
@@ -148,6 +157,8 @@ document.addEventListener('mousemove', (event) => {
 
 // live lowering
 
+var n = 0;
+
 function lowerCount() {
     for (i in range(1,elements+1)){
         var container = document.getElementsByClassName(i)[0]
@@ -159,10 +170,18 @@ function lowerCount() {
             } else {
                 container.innerHTML = minusAmount
             }
-            console.log(minusAmount)
             container.style.background = colors[container.innerHTML]
         }
+        if (container.innerHTML > (pointReceiveRatio*intensity)) {
+            n = Number(n) + 1;
+            if (n > points){
+                localStorage.setItem("point", n);
+                document.querySelector('meta[name="HighScore"]').setAttribute("content", points);
+            }
+        }
     }
+    document.title = 'Density Cursor, Score: ' + String(n)
+    
 }
 
 var intervalId = window.setInterval(function(){
